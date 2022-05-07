@@ -40,6 +40,7 @@ public class Mercado {
         System.out.println("Total de laranjas restantes " + produtoLaranja.getQuantidade());
         System.out.println("Total de caixas de leite restantes " + produtoLeite.getQuantidade());
         System.out.println("Total de maças restantes " + produtoMaca.getQuantidade());
+        System.out.println("Total de maças restantes " + produtoMaca.getQuantidade());
 
     }
 }
