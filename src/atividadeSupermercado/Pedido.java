@@ -3,18 +3,15 @@ package atividadeSupermercado;
 import java.util.ArrayList;
 
 public class Pedido {
-    private itemDePedido itemPedido = new itemDePedido();
     private Cliente cliente;
     private int nPedido;
     private String pagamento;
     private ArrayList<itemDePedido> listaItemPedido = new ArrayList<>();
 
-    public itemDePedido getItemPedido() {
-        return this.itemPedido;
-    }
-
-    void setItemPedido(itemDePedido itemPedido) {
-        this.itemPedido = itemPedido;
+    public Pedido(Cliente cliente, int nPedido, String pagamento) {
+        this.cliente = cliente;
+        this.nPedido = nPedido;
+        this.pagamento = pagamento;
     }
 
     Cliente getCliente() {
@@ -62,6 +59,10 @@ public class Pedido {
     }
     
     void listarPedidos(){
+            System.out.println("Pedido nº: " + this.getnPedido());
+            System.out.println("Nome cliente: " + this.getCliente().getNome());
+            System.out.println("Método de pagamento: " + this.getPagamento());
+            System.out.println("Itens comprado: " + this.getListaItemPedido().size());
             for (int i=0 ; i < this.listaItemPedido.size();i++){
             itemDePedido pedido;
             double totalPorItem=0;
@@ -71,9 +72,7 @@ public class Pedido {
     }
     
     void inserirPedido(Produto produtoId, int quantidade){
-        itemDePedido itemPedido = new itemDePedido();
-        itemPedido.setProduto(produtoId);
-        itemPedido.setQuantidade(quantidade);
+        itemDePedido itemPedido = new itemDePedido(produtoId, quantidade);
         produtoId.diminuirEstoque(quantidade);
         this.listaItemPedido.add(itemPedido);
     }

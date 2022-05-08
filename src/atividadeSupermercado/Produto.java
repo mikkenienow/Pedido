@@ -7,6 +7,14 @@ public class Produto {
     private double preco;
     private int quantidade;
 
+    public Produto(int codProduto, String descricao, double preco, int quantidade) {
+        this.codProduto = codProduto;
+        this.descricao = descricao;
+        this.preco = preco;
+        this.quantidade = quantidade;
+        System.out.println("Produto " + descricao + " cadastrado!");
+    }
+
     void setCodProduto(int codProduto) {
         this.codProduto = codProduto;
     }
@@ -39,14 +47,6 @@ public class Produto {
         return this.quantidade;
     }
     
-    void cadastrarProduto(int codProduto, String descricao, double preco, int quantidade) {
-        setCodProduto(codProduto);
-        setDescricao(descricao);
-        setPreco(preco);
-        setQuantidade(quantidade);
-        System.out.println("Produto " + descricao + " cadastrado!");
-    }
-
     void ajustarEstoque(int novaQuantidade) {
         this.quantidade = novaQuantidade;
     }

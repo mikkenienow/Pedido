@@ -5,6 +5,11 @@ public class itemDePedido {
     private Produto produto;
     private int quantidade;
 
+    public itemDePedido(Produto produto, int quantidade) {
+        this.produto = produto;
+        this.quantidade = quantidade;
+    }
+
     Produto getProduto() {
         return produto;
     }
